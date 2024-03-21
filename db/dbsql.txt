@@ -1,0 +1,41 @@
+-- database: c:\Users\serve\Desktop\work\estore\estoreServer\db\db.sqlite
+
+-- Use the ▷ button in the top right corner to run the entire file.
+
+CREATE TABLE categories (
+  id INTEGER PRIMARY KEY,
+  category TEXT,
+  parent_category_id INTEGER,
+  created_on TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+CREATE TABLE products (
+  id INTEGER PRIMARY KEY,
+  product_name TEXT,
+  category_id INTEGER,
+  product_img TEXT,
+  price REAL,
+  created_on TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+
+INSERT INTO categories (category, parent_category_id, created_on) VALUES
+('Men',NULL , '2023-10-26  12:55:27'),
+('Casual Wear', 1, '2023-10-26 13:45:53'),
+('Accessories', 5, '2023-10-28 12:39:47'),
+('Women',NULL, '2023-10-26 15:48:45'),
+('Kids',NULL, '2023-10-26 15:48:45'),
+('Party wear', 4, '2023-10-26 16:50:34'),
+('Foot wear', 4, '2023-10-26 16:50:34'),
+('Accessories', 4, '2023-10-26 16:51:30');
+
+
+INSERT INTO products (product_name, category_id, product_img, price, created_on) VALUES
+('Jacket', 2, 'shop-1.jpg', 45, '2023-10-26 16:57:43'),
+('Purse', 6, 'shop-2.jpg', 40, '2023-10-26 16:59:46'),
+('Dress', 6, 'shop-3.jpg', 45, '2023-10-26 16:59:46'),
+('Denims', 2, 'sop-4.jpg', 50, '2023-10-26 17:02:07'),
+('Laced boots', 7, 'shop-5.jpg', 65, '2023-10-26 17:02:07'),
+('Backpack', 3, 'shop-6.jpg', 20, '2023-10-26 17:02:07'),
+('Earrings', 8, 'shop-7.jpg', 12, '2023-10-26 17:02:07'),
+('Scarf', 3, 'shop-8.jpg', 15, '2023-10-26 17:02:07'),
+('Leather Boots', 7, 'shop-9.jpg', 115, '2023-10-26 17:02:07');
